@@ -3,7 +3,7 @@
     written by Anish Krishna Vallapuram
     09 Feb, 2019
 """
-
+import sys
 from newspaper import Article
 from nltk.tag import StanfordNERTagger
 from nltk.tokenize import sent_tokenize as sentence
@@ -72,6 +72,9 @@ def get_relations(articles):
                  'SOURCE': [], 'URL': [], 'CONTEXT': []}
     gz_path = 'stanford-ner-2018-10-16/classifiers/english.all.3class.distsim.crf.ser.gz'
     jar_path = 'stanford-ner-2018-10-16/stanford-ner.jar'
+    if sys.platform == 'win32':
+        gz_path = "stanford-ner-2018-10-16\\classifiers\\english.all.3class.distsim.crf.ser.gz"
+        jar_path = 'stanford-ner-2018-10-16\\stanford-ner.jar'
     st = StanfordNERTagger(gz_path, jar_path, encoding='utf-8')
     for text in range(len(articles['TEXT'])):
         print('Analysing for sentiment and relations in:\n',
