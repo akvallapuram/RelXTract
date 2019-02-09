@@ -4,7 +4,7 @@ ReadMe
 This is a simple relation extraction model that extracts relations from news texts.
 
 1. paste the url links of the news sources to the sources.txt as described
-2. run the RelXTractor.exe file
+2. run the RelXTractor.py file
 3. the connections.csv file will be updated with the connections
 4. the actors.csv file will be updated with the actors
 
