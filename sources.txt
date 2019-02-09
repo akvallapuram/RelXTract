@@ -1,0 +1,17 @@
+# Please add the url of your source news here
+# if a line is precedented by a '#', it will be ignored
+# use these lines for personal documentation
+# sample url link to the source
+https://www.theguardian.com/technology/2019/feb/08/jeff-bezos-blackmail-national-enquirer-trump
+# the source must not be precedented by any '#' or it will be ignored
+# you can add multiple url links
+https://www.bbc.com/news/world-us-canada-40709270
+#
+#
+https://www.politico.com/story/2019/02/06/steve-mnuchin-testify-russia-sanctions-1151386
+# each url link must be in a new line
+# RelXTractor will work for urls from news sites only
+# do not leave any blank lines
+# you may leave blank lines as show above
+# there are certain news url links, where read more must be pressed
+# to get the url link to full news article
