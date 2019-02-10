@@ -1,7 +1,7 @@
 ReadMe
 ----------
 
-This is a simple relation extraction model that extracts relations from news texts. The model uses Stanford NER library and the idea of co-occurence which states that if two social entities are uttered in a sentence in a news source, then they must be related. 
+This is a simple relation extraction model that extracts relations from news texts. The model uses Stanford NER library and the idea of co-occurence which states that if two social entities are present in a sentence in a news source, then they must be related. 
 
 1. paste the url links of the news sources to the sources.txt as described
 2. run the RelXTractor.py file
