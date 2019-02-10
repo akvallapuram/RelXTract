@@ -5,10 +5,10 @@
 https://www.theguardian.com/technology/2019/feb/08/jeff-bezos-blackmail-national-enquirer-trump
 # the source must not be precedented by any '#' or it will be ignored
 # you can add multiple url links
-https://www.bbc.com/news/world-us-canada-40709270
+#https://www.bbc.com/news/world-us-canada-40709270
 #
 #
-https://www.politico.com/story/2019/02/06/steve-mnuchin-testify-russia-sanctions-1151386
+# https://www.politico.com/story/2019/02/06/steve-mnuchin-testify-russia-sanctions-1151386
 # each url link must be in a new line
 # RelXTractor will work for urls from news sites only
 # do not leave any blank lines
