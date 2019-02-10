@@ -1,8 +1,84 @@
 ,NODE1,SOURCEINTEXT,DATE,SOURCE
 0,Foreign Ministry,Christopher Steele,6.20.2016,Steele dossier 2016/080 
-1,Donald TRUMP,Christopher Steele,6.20.2016,Steele dossier 2016/080 
-2,Department K,Christopher Steele,6.20.2016,Steele dossier 2016/080 
-3,FSB,Christopher Steele,6.20.2016,Steele dossier 2016/080 
-4,Kremlin,Christopher Steele,6.20.2016,Steele dossier 2016/080 
-5,CLINTON,Christopher Steele,6.20.2016,Steele dossier 2016/080 
-6,Dmitriy PESKOV,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+1,Kremlin,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+2,US,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+3,Donald TRUMP,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+4,Hillary CLINTON,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+5,Moscow,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+6,Ritz Carlton Hotel,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+7,Mrs OBAMA,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+8,Department K,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+9,FSB,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+10,CLINTON,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+11,Russia,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+12,Dmitriy PESKOV,Christopher Steele,6.20.2016,Steele dossier 2016/080 
+13,West,Christopher Steele,7.26.2016,Steele dossier 2016/086 
+14,Rosneft,Christopher Steele,7.19.2016,Steele dossier 2016/94 
+15,Igor SECHIN,Christopher Steele,7.19.2016,Steele dossier 2016/94 
+16,Donald TRUMP Carter PAGE,Christopher Steele,7.19.2016,Steele dossier 2016/94 
+17,S IVANOV,Christopher Steele,7.19.2016,Steele dossier 2016/94 
+18,Hillary,Christopher Steele,no date,Steele dossier 2016/095 
+19,PUTIN,Christopher Steele,no date,Steele dossier 2016/095 
+20,Ukraine,Christopher Steele,no date,Steele dossier 2016/095 
+21,Baltics Eastern Europe,Christopher Steele,no date,Steele dossier 2016/095 
+22,Democratic Party,Christopher Steele,no date,Steele dossier 2016/095 
+23,China,Christopher Steele,no date,Steele dossier 2016/095 
+24,St Petersburg,Christopher Steele,no date,Steele dossier 2016/095 
+25,Donald TRUMPs,Christopher Steele,7.30.2016,Steele dossier 2016/097 
+26,Democratic National Committee,Christopher Steele,7.30.2016,Steele dossier 2016/097 
+27,TRUMP,Christopher Steele,7.30.2016,Steele dossier 2016/097 
+28,IVANOV,Christopher Steele,8.5.2016,Steele dossier 2016/100 
+29,PESKOV,Christopher Steele,8.5.2016,Steele dossier 2016/100 
+30,Dmitriy MEDVEDEV,Christopher Steele,8.5.2016,Steele dossier 2016/100 
+31,USG,Christopher Steele,8.5.2016,Steele dossier 2016/100 
+32,Russian Presidential Administration,Christopher Steele,8.10.2016,Steele dossier 2016/101 
+33,Sergei IVANOV,Christopher Steele,8.10.2016,Steele dossier 2016/101 
+34,America,Christopher Steele,8.10.2016,Steele dossier 2016/101 
+35,Washington,Christopher Steele,8.10.2016,Steele dossier 2016/101 
+36,DNC,Christopher Steele,8.10.2016,Steele dossier 2016/101 
+37,Lyndon LAROUCHE,Christopher Steele,8.10.2016,Steele dossier 2016/101 
+38,Jill STEIN,Christopher Steele,8.10.2016,Steele dossier 2016/101 
+39,Carter,Christopher Steele,8.10.2016,Steele dossier 2016/101 
+40,Michael Flynn,Christopher Steele,8.10.2016,Steele dossier 2016/101 
+41,WikiLeaks,Christopher Steele,8.10.2016,Steele dossier 2016/102 
+42,Bernie SANDERS,Christopher Steele,8.10.2016,Steele dossier 2016/102 
+43,Paul,Christopher Steele,8.22.2016,Steele dossier 2016/105 
+44,Donald,Christopher Steele,8.22.2016,Steele dossier 2016/105 
+45,YANUKOVYCH,Christopher Steele,8.22.2016,Steele dossier 2016/105 
+46,MANAFORT,Christopher Steele,8.22.2016,Steele dossier 2016/105 
+47,Corey LEWANDOWSKI,Christopher Steele,8.22.2016,Steele dossier 2016/105 
+48,PA,Christopher Steele,9.14.2016,Steele dossier 2016/111 
+49,Yuri USHAKOV,Christopher Steele,9.14.2016,Steele dossier 2016/111 
+50,PA Head Sergei IVANOV,Christopher Steele,9.14.2016,Steele dossier 2016/111 
+51,Anton VAINO,Christopher Steele,9.14.2016,Steele dossier 2016/111 
+52,Duma,Christopher Steele,9.14.2016,Steele dossier 2016/111 
+53,MFA,Christopher Steele,9.14.2016,Steele dossier 2016/111 
+54,Sergei,Christopher Steele,9.14.2016,Steele dossier 2016/111 
+55,Alpha Group,Christopher Steele,9.14.2016,Steele dossier 2016/112 
+56,Mikhail FRIDMAN Petr AVEN,Christopher Steele,9.14.2016,Steele dossier 2016/112 
+57,AVEN,Christopher Steele,9.14.2016,Steele dossier 2016/112 
+58,FRIDMAN,Christopher Steele,9.14.2016,Steele dossier 2016/112 
+59,Presidential Administration,Christopher Steele,9.14.2016,Steele dossier 2016/112 
+60,Oleg GOVORUN,Christopher Steele,9.14.2016,Steele dossier 2016/112 
+61,Uzbekistan,Christopher Steele,9.14.2016,Steele dossier 2016/112 
+62,TNK,Christopher Steele,9.14.2016,Steele dossier 2016/112 
+63,Baku,Christopher Steele,9.14.2016,Steele dossier 2016/113 
+64,Hillary CLINTONS,Christopher Steele,10.12.2016,Steele dossier 2016/130 
+65,Higher Economic School,Christopher Steele,10.18.2016,Steele dossier 2016/134 
+66,SECHIN,Christopher Steele,10.18.2016,Steele dossier 2016/134 
+67,New York,Christopher Steele,10.19.2016,Steele dossier 2016/135 
+68,COHEN,Christopher Steele,10.19.2016,Steele dossier 2016/135 
+69,Russian Presidential Administration PA Legal Department,Christopher Steele,10.19.2016,Steele dossier 2016/135 
+70,EU,Christopher Steele,10.19.2016,Steele dossier 2016/135 
+71,KIRIYENKO,Christopher Steele,10.19.2016,Steele dossier 2016/135 
+72,Michael COHEN,Christopher Steele,10.20.2016,Steele dossier 2016/136 
+73,Prague Czech Republic,Christopher Steele,10.20.2016,Steele dossier 2016/136 
+74,Rossotrudnichestvo,Christopher Steele,10.20.2016,Steele dossier 2016/136 
+75,Prague,Christopher Steele,10.20.2016,Steele dossier 2016/136 
+76,COHEN  Russian Presidential Administration,Christopher Steele,10.20.2016,Steele dossier 2016/136 
+77,Konstantin KOSACHEV,Christopher Steele,10.20.2016,Steele dossier 2016/136 
+78,PA Legal Department,Christopher Steele,10.20.2016,Steele dossier 2016/136 
+79,Europe,Christopher Steele,12.13.2016,Steele dossier 2016/166 
+80,Aleksei GUBAROV,Christopher Steele,12.13.2016,Steele dossier 2016/166 
+81,Paul MANAFORT,Christopher Steele,12.13.2016,Steele dossier 2016/166 
+82,Bulgaria,Christopher Steele,12.13.2016,Steele dossier 2016/166 
