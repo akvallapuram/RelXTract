@@ -13,4 +13,4 @@ Note: This extraction model is still very naive. It cannot differentiate between
 
 Post-Scriptum:
 
-This project was originally intended for my Undergraduate Reasearch Project. The aim of the project was to analyse the Steele Dossier for Trump-Russia relations and develop social networks from the assigned texts. It was originally intended that this analysis of the Dossier be done through manual reading. However, I wanted to automate the process, leading to the inception of RelXTract. 
+This project was originally intended for my Undergraduate Reasearch Project during Fall 2018. The aim of the project was to analyse the Steele Dossier for Trump-Russia relations and develop social networks from the assigned texts. It was originally intended that this analysis of the Dossier be done through manual reading. However, I wanted to automate the process, leading to the inception of RelXTract. 
