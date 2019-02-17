@@ -1,6 +1,7 @@
 import pandas as pd
 import RelXTractor
 import read_dossier
+import read_testimony
 import sys
 
 
@@ -22,6 +23,8 @@ def main():
         articles = use_dossier()
     elif 'sources' in sys.argv:
         articles = use_sources()
+    elif 'testimony' in sys.argv:
+        articles = read_testimony.read_testimony()
     else:
         print("ERROR: no source given. Choose from: 'dossier' and 'sources'")
         return

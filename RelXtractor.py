@@ -97,8 +97,11 @@ def get_relations(articles):
                 relations['NODE2'].append(strip_punct(r[1][1]))
                 relations['TYPE'].append(sentiment)
                 relations['DATE'].append(articles['Date'][text])
-                relations['SOURCEINTEXT'].append(','.join(
-                                                 articles['Authors'][text]))
+                try:
+                    relations['SOURCEINTEXT'].append(','.join(
+                                                     articles['Authors'][text]))
+                except TypeError:
+                    relations['SOURCEINTEXT'].append(None)
                 relations['SOURCE'].append(articles['SOURCE'][text])
                 relations['CONTEXT'].append(sent)
     print('Finished Analysing all news sources.')
