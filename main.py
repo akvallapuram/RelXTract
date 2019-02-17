@@ -2,6 +2,7 @@ import pandas as pd
 import RelXTractor
 import read_dossier
 import read_testimony
+from dependency import coreference
 import sys
 
 
@@ -14,6 +15,8 @@ def use_sources():
 
 def use_dossier():
     articles = read_dossier.read_dossier()
+    for text in articles['TEXT']:
+        text = coreference(text)
     return articles
 
 
