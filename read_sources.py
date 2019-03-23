@@ -33,7 +33,7 @@ def read_dossier():
         author = ['Christopher Steele']
         try:
             source_name = info[0].replace('COMPANY INTELLIGENCE REPORT ',
-                                            'Steele dossier ')
+                                          'Steele dossier ')
         except IndexError:
             source_name = 'source not found'
         try:
@@ -85,7 +85,6 @@ def read_news():
     return articles
 
 
-# TODO
 # reads the Trump testimony file
 def read_testimony():
     print("Reading the Testimony")

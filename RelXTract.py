@@ -7,31 +7,18 @@ import dependency
 import read_sources
 
 
-class Actor:
-
-    def __init__(self, name, ent):
-        self.name = name
-        self.ent = ent
-        self.aliases = []
-        self.sources = []
-        self.relations = []
-
-    def add_alias(self, al):
-        self.aliases.append(al)
-
-    def add_source(self, source):
-        self.sources.append(source)
-
-
 class Source:
 
-    def __init__(self, authors, date, text, source):
+    def __init__(self, authors, date, text, title):
         self.authors = authors
         self.date = date
         self.text = text
-        self.source = source
+        self.title = title
         self.actors = []
+        self.relations = []
         self.doc = dependency.annotate(self.text)
+        self.trees = [dependency.dependency_tree(sent.root)
+                      for sent in self.doc.sents]
 
     # add actor
     def add_actor(self, actor):
@@ -39,18 +26,27 @@ class Source:
 
     # realises actors
     def extract_actors(self):
+        ignore_ents = ['CARDINAL', 'DATE', 'PRODUCT', 'EVENT',
+                       'FAC', 'WORK_OF_ART']
         for ent in self.doc.ents:
-            if ent.label_ not in ['CARDINAL', 'DATE']:
-                new_actor = Actor(ent.text, ent)
-                new_actor.add_source(self)
-                self.add_actor(new_actor)
+            if ent.label_ not in ignore_ents and ent.text not in self.actors:
+                self.add_actor(ent.text)
+        print("extracted actors from " + self.title)
+        return self.actors
 
-    # get relation
+    # get relations
     def extract_relations(self):
-        for ent in self.doc.ents:
-            print('ent: ', ent.text, ' head: ', list(ent)[-1].head.text, ' type:', list(ent)[-1].head.type)
+        for actor in self.actors:
+            print(actor.name, actor.ent.pos_, actor.ent.dep_)
+        print("extracted relations from " + self.title)
+
+
+def main():
+    text = read_sources.read_dossier()[0]
+    actors = text.extract_actors()
+    print(text.text)
+    print(actors)
 
 
 if __name__ == '__main__':
-    text = read_sources.read_dossier()[0]
-    text.extract_relations()
+    main()

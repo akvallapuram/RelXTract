@@ -1,5 +1,5 @@
 import pandas as pd
-import RelXTractor
+import RelXTract
 import read_dossier
 import read_testimony
 from dependency import coreference
@@ -8,8 +8,8 @@ import sys
 
 # two features: news sites or dossier
 def use_sources():
-    all_urls = RelXTractor.url_from_sources()
-    articles = RelXTractor.read_news(all_urls)
+    all_urls = RelXTract.url_from_sources()
+    articles = RelXTract.read_news(all_urls)
     return articles
 
 
@@ -31,14 +31,14 @@ def main():
     else:
         print("ERROR: no source given. Choose from: 'dossier' and 'sources'")
         return
-    relations = RelXTractor.get_relations(articles)
-    actors = RelXTractor.get_actors(relations)
+    relations = RelXTract.get_relations(articles)
+    actors = RelXTract.get_actors(relations)
     print('Saving relation data to "connections.csv"')
     df = pd.DataFrame(data=relations, columns=relations.keys())
-    df.to_csv('connections.csv', sep=',')
+    df.to_csv('Results/connections.csv', sep=',')
     print('Saving actors data to "actors.csv"')
     df1 = pd.DataFrame(data=actors, columns=actors.keys())
-    df1.to_csv('actors.csv', sep=',')
+    df1.to_csv('Results/actors.csv', sep=',')
     print("Finished Saving. Done!")
 
 
