@@ -1,44 +1,56 @@
 import pandas as pd
-import RelXTract
-import read_dossier
-import read_testimony
-from dependency import coreference
+import read_sources
 import sys
+import network
 
 
-# two features: news sites or dossier
-def use_sources():
-    all_urls = RelXTract.url_from_sources()
-    articles = RelXTract.read_news(all_urls)
-    return articles
+def get_actors(sources):
+    actors = {'NODE1': [], 'SOURCEINTEXT': [], 'DATE': [],
+              'SOURCE': []}
+    for source in sources:
+        authors = ", ".join(source.authors)
+        for actor in source.extract_actors():
+            actors['NODE1'].append(actor)
+            actors['SOURCEINTEXT'].append(authors)
+            actors['DATE'].append(source.date)
+            actors['SOURCE'].append(source.title)
+    return actors
 
 
-def use_dossier():
-    articles = read_dossier.read_dossier()
-    for text in articles['TEXT']:
-        text = coreference(text)
-    return articles
+def get_relations(sources):
+    relations = {'NODE1': [], 'NODE2': [], 'DATE': [],
+                 'SOURCEINTEXT': [], 'SOURCE': []}
+    for source in sources:
+        authors = ", ".join(source.authors)
+        for relation in source.extract_relations():
+            relations['NODE1'].append(relation[0])
+            relations['NODE2'].append(relation[1])
+            relations['DATE'].append(source.date)
+            relations['SOURCEINTEXT'].append(authors)
+            relations['SOURCE'].append(source.title)
+    return relations
 
 
 def main():
-    articles = ''
+    sources = ''
     if 'dossier' in sys.argv:
-        articles = use_dossier()
+        sources = read_sources.read_dossier()
     elif 'sources' in sys.argv:
-        articles = use_sources()
+        sources = read_sources.read_news()
     elif 'testimony' in sys.argv:
-        articles = read_testimony.read_testimony()
+        sources = read_sources.read_testimony()
     else:
         print("ERROR: no source given. Choose from: 'dossier' and 'sources'")
         return
-    relations = RelXTract.get_relations(articles)
-    actors = RelXTract.get_actors(relations)
+    actors = get_actors(sources)
+    relations = get_relations(sources)
     print('Saving relation data to "connections.csv"')
     df = pd.DataFrame(data=relations, columns=relations.keys())
     df.to_csv('Results/connections.csv', sep=',')
     print('Saving actors data to "actors.csv"')
     df1 = pd.DataFrame(data=actors, columns=actors.keys())
     df1.to_csv('Results/actors.csv', sep=',')
+    network.draw_network(relations)
     print("Finished Saving. Done!")
 
 

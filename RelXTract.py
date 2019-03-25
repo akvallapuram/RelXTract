@@ -4,7 +4,7 @@
     15 February, 2019
 """
 import dependency
-import read_sources
+from itertools import combinations
 
 
 class Source:
@@ -16,7 +16,7 @@ class Source:
         self.title = title
         self.actors = []
         self.relations = []
-        self.doc = dependency.annotate(self.text)
+        self.doc = dependency.annotate(self)
         self.trees = [dependency.dependency_tree(sent.root)
                       for sent in self.doc.sents]
 
@@ -26,27 +26,27 @@ class Source:
 
     # realises actors
     def extract_actors(self):
-        ignore_ents = ['CARDINAL', 'DATE', 'PRODUCT', 'EVENT',
-                       'FAC', 'WORK_OF_ART']
+        allowed_types = ['PERSON', 'ORG', 'NORP', 'GPE', 'LOC']
         for ent in self.doc.ents:
-            if ent.label_ not in ignore_ents and ent.text not in self.actors:
-                self.add_actor(ent.text)
+            if ent.label_ in allowed_types:
+                self.add_actor(ent)
         print("extracted actors from " + self.title)
-        return self.actors
+        # unique array of actors
+        str = []
+        [str.append(actor.text) for actor in self.actors if actor.text not in str]
+        return str
 
     # get relations
     def extract_relations(self):
-        for actor in self.actors:
-            print(actor.name, actor.ent.pos_, actor.ent.dep_)
+        if len(self.actors) == 0:
+            self.extract_actors()
+        potential_relations = combinations(self.actors, 2)
+        for rel in potential_relations:
+            if rel[0].text != rel[1].text and \
+               dependency.verb_dep(rel[0]) == dependency.verb_dep(rel[1]):
+                self.relations.append(rel)
         print("extracted relations from " + self.title)
+        return [(rel[0].text, rel[1].text) for rel in self.relations]
 
-
-def main():
-    text = read_sources.read_dossier()[0]
-    actors = text.extract_actors()
-    print(text.text)
-    print(actors)
-
-
-if __name__ == '__main__':
-    main()
+    def show_actors(self):
+        ", ".join([actor.text for actor in self.actors])

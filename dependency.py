@@ -11,6 +11,7 @@ from nltk import Tree
 def corelcl(text):
     clauses = []
     for sent in doc.sents:
+        clauses.append(" ".join([token.text for token in sent]))
         for token in sent:
             if token.dep_ == "relcl":
                 subj = " ".join([c.text for c in list(token.head.subtree)
@@ -21,6 +22,7 @@ def corelcl(text):
                 clauses.append(clause)
     result = " ".join(clauses)
     return(result)
+
 
 # Problem 2: coreferencing possesive pronouns
 # doc = coref(u'Trump is the president of US. His ally is Putin.')
@@ -38,20 +40,22 @@ def corelcl(text):
 # Problem 4: Traverse till first verb
 def verb_dep(ent):
     verb = ent[-1]
-    while verb.pos_ != "VERB" and verb.dep_ != "xcomp":
+    limit = 0
+    while verb.pos_ != "VERB" and verb.dep_ != "xcomp" and limit < 10:
+        limit += 1
         verb = verb.head
     return verb.text
 
 
 # annotates the text with nlp data and resolves coreferences
-def annotate(text):
-    print('Resolving coreferences')
+def annotate(source):
+    print('Resolving coreferences in ' + source.title)
     coref = spacy.load('en_coref_lg')
-
-    doc = coref(text)._.coref_resolved
-    print('Annotating for NLP features')
+    clean_text = source.text.replace('\t', ' ').replace('\n', ' ')
+    res = coref(clean_text)._.coref_resolved
+    print('Annotating for NLP features' + source.title)
     en_nlp = spacy.load('en_core_web_sm')
-    doc = en_nlp(doc)
+    doc = en_nlp(res)
     return doc
 
 
@@ -79,7 +83,6 @@ def print_tree(tree):
 
 
 if __name__ == "__main__":
-    coref = spacy.load('en_coref_lg')
-    nlp = spacy.load("en_core_web_sm")
     sent = "This was confirmed by Source D, a close associate of Trump who had organized and managed his recent trips to Moscow."
-    doc = nlp(sent)
+    doc = annotate(sent)
+    [print(ent) for ent in doc.ents]
