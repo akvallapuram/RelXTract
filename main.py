@@ -19,7 +19,7 @@ def get_actors(sources):
 
 def get_relations(sources):
     relations = {'NODE1': [], 'NODE2': [], 'DATE': [],
-                 'SOURCEINTEXT': [], 'SOURCE': []}
+                 'SOURCEINTEXT': [], 'SOURCE': [], 'CONTEXT': []}
     for source in sources:
         authors = ", ".join(source.authors)
         for relation in source.extract_relations():
@@ -28,6 +28,7 @@ def get_relations(sources):
             relations['DATE'].append(source.date)
             relations['SOURCEINTEXT'].append(authors)
             relations['SOURCE'].append(source.title)
+            relations['CONTEXT'].append(relation[2])
     return relations
 
 

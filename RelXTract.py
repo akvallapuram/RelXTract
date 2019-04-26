@@ -28,7 +28,7 @@ class Source:
     def extract_actors(self):
         allowed_types = ['PERSON', 'ORG', 'NORP', 'GPE', 'LOC']
         for ent in self.doc.ents:
-            if ent.label_ in allowed_types:
+            if ent.label_ in allowed_types and ent.text != " ":
                 self.add_actor(ent)
         print("extracted actors from " + self.title)
         # unique array of actors
@@ -43,10 +43,13 @@ class Source:
         potential_relations = combinations(self.actors, 2)
         for rel in potential_relations:
             if rel[0].text != rel[1].text and \
+               rel[0].sent == rel[1].sent and \
                dependency.verb_dep(rel[0]) == dependency.verb_dep(rel[1]):
                 self.relations.append(rel)
         print("extracted relations from " + self.title)
-        return [(rel[0].text, rel[1].text) for rel in self.relations]
+        return [(rel[0].text, rel[1].text, rel[0].sent)
+                for rel in self.relations]
+
 
     def show_actors(self):
         ", ".join([actor.text for actor in self.actors])
